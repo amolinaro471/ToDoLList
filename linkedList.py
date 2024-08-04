@@ -24,13 +24,23 @@ class linkedList:
             new_node.next = self.head
             self.head = new_node
 
-# LList = linkedList()
-# LList.add_to_list("Head Node")
-# LList.add_to_list("Head Node New")
-# LList.add_to_list("Head Node Even Newer")
+    def remove_from_list(self,title):
+        #check the head node
+        #if head node, head node pointer goes to next node
+        #check rest of node and repeat the same idea
+        temp = self.head
+        while temp is not None:
+            if temp.title == title:
+                if temp is self.head:
+                    self.head = self.head.next
+                # remove non head node now
 
-# # one_node = Node("TESTING1")
-# # LList.head = one_node
-# # LList.add_to_list("Testing Add")
-# # LList.add_to_list("Testing Add Two")
-# print(LList)
+            temp = temp.next
+            
+
+
+LList = linkedList()
+LList.add_to_list("Head Node")
+LList.add_to_list("Head Node New")
+LList.add_to_list("Head Node Even Newer")
+print(LList)
