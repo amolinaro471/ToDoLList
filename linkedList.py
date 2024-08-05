@@ -24,18 +24,9 @@ class linkedList:
             new_node.next = self.head
             self.head = new_node
 
-    def remove_from_list(self,title):
-        #check the head node
-        #if head node, head node pointer goes to next node
-        #check rest of node and repeat the same idea
-        temp = self.head
-        while temp is not None:
-            if temp.title == title:
-                if temp is self.head:
-                    self.head = self.head.next
-                # remove non head node now
-
-            temp = temp.next
+    def remove_from_head(self):
+        temp = self.head.next
+        self.head = temp
             
 
 
