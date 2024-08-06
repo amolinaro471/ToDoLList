@@ -1,3 +1,3 @@
 This will be a CLI Tool
 
-Will output, add or remove the current ToDoList
+Will output, add tasks or remove tasks in the current ToDoList
