@@ -11,6 +11,8 @@ class linkedList:
         temp = self.head
         out = ""
         while temp is not None:
+            if temp is self.head:
+                out = "Head --> "
             out = out + "Title: " + temp.title + "\n"
             temp = temp.next
         return out
@@ -28,10 +30,3 @@ class linkedList:
         temp = self.head.next
         self.head = temp
             
-
-
-LList = linkedList()
-LList.add_to_list("Head Node")
-LList.add_to_list("Head Node New")
-LList.add_to_list("Head Node Even Newer")
-print(LList)
