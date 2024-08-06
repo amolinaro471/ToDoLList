@@ -1,6 +1,7 @@
 class Node:
     def __init__(self,title):
         self.title = title
+        self.tasks = None
         self.next = None
 
 class linkedList:
@@ -14,12 +15,15 @@ class linkedList:
             if temp is self.head:
                 out = "Head --> \n"
             out = out + "Title: " + temp.title + "\n"
+            for task in temp.tasks:
+                out = out + "\t* " + task + "\n"
             temp = temp.next
         return out
     
 
-    def add_to_list(self,title):
+    def add_to_list(self,title,tasks):
         new_node = Node(title)
+        new_node.tasks = tasks
         if self.head is None:
             self.head = new_node
         else:
