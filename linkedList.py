@@ -12,7 +12,7 @@ class linkedList:
         out = ""
         while temp is not None:
             if temp is self.head:
-                out = "Head --> "
+                out = "Head --> \n"
             out = out + "Title: " + temp.title + "\n"
             temp = temp.next
         return out
@@ -26,7 +26,18 @@ class linkedList:
             new_node.next = self.head
             self.head = new_node
 
-    def remove_from_head(self):
-        temp = self.head.next
-        self.head = temp
+    def remove_from_list(self,title):
+        temp = self.head
+        before = temp
+        if title is temp.title:
+            self.head = temp.next
+        else:
+            temp = temp.next
+            while temp is not None:
+                if temp.title is title:
+                    before.next = temp.next
+                    break
+                temp = temp.next
+                before = before.next
+                
             
