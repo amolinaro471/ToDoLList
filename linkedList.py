@@ -58,7 +58,7 @@ class linkedList:
             arr.append(info)
         
         for i in range(0, length,2):
-            self.add_to_list(arr[i], arr[i+1])
+            self.add_to_list(arr[i], list(arr[i+1]))
 
     def write_to_file(self, file_to_write):
         file = open(file_to_write, "w")
@@ -67,5 +67,6 @@ class linkedList:
             file.write(temp.title)
             file.write("\n")
             file.write(str(temp.tasks))
+            file.write("\n")
             temp = temp.next
         file.close()
