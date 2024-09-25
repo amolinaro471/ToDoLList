@@ -20,7 +20,6 @@ class linkedList:
             temp = temp.next
         return out
     
-
     def add_to_list(self,title,tasks):
         new_node = Node(title)
         new_node.tasks = tasks
@@ -43,5 +42,20 @@ class linkedList:
                     break
                 temp = temp.next
                 before = before.next
-                
-            
+
+    def read_from_file(self,file_to_read):
+        file = open(file_to_read, "r")
+        lines_in_file = file.readlines()
+        file.close()
+        length = len(lines_in_file)
+        arr = []
+
+        for i in range(0, length):
+            info = lines_in_file[i]
+            info = info.split("\n")[0]
+            if "," in info:
+                info = info.split(",")
+            arr.append(info)
+        
+        for i in range(0, length,2):
+            self.add_to_list(arr[i], arr[i+1])
