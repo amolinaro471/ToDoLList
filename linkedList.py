@@ -61,4 +61,11 @@ class linkedList:
             self.add_to_list(arr[i], arr[i+1])
 
     def write_to_file(self, file_to_write):
-        pass
+        file = open(file_to_write, "w")
+        temp = self.head
+        while temp is not None:
+            file.write(temp.title)
+            file.write("\n")
+            file.write(str(temp.tasks))
+            temp = temp.next
+        file.close()
