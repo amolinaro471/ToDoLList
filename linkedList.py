@@ -59,3 +59,6 @@ class linkedList:
         
         for i in range(0, length,2):
             self.add_to_list(arr[i], arr[i+1])
+
+    def write_to_file(self, file_to_write):
+        pass
