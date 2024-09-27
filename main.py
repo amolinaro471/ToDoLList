@@ -18,7 +18,7 @@ def task_inputs():
         else:
             task_list.append(task)
             done = int(input("Type 1 to be done inputting tasks: "))
-            if done is 1:
+            if done == 1:
                 isDone = True
     return task_list
 
