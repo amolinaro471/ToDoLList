@@ -13,10 +13,13 @@ def task_inputs():
     task_list = []
     while not isDone:
         task = input("Task: ")
-        task_list.append(task)
-        done = int(input("Type 1 to be done inputting tasks: "))
-        if done is 1:
-            isDone = True
+        if task is "":
+            break
+        else:
+            task_list.append(task)
+            done = int(input("Type 1 to be done inputting tasks: "))
+            if done is 1:
+                isDone = True
     return task_list
 
 def inputChecker(input_num):
@@ -28,6 +31,7 @@ def inputChecker(input_num):
         todolist.add_to_list(title, tasks)
     elif x == 2:
         title = input("Title to Remove: ")
+        print(title)
         #This doesnt remove anything even if the Title name is right?
         todolist.remove_from_list(title)
     elif x == 3:
