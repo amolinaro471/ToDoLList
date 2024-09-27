@@ -1,3 +1,7 @@
-This will be a CLI Tool
+How to run:
 
-Will output, add tasks or remove tasks in the current ToDoList
+* python main.py
+
+This tool can Add and/or Remove tasks from the List. It can also Save and/or Load a list from ./SavedList.txt
+
+
