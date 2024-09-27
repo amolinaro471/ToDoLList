@@ -21,7 +21,6 @@ def inputChecker(input_num):
         print("Remove Task")
         title = input("Title to Remove: ")
         #This doesnt remove anything even if the Title name is right?
-        print(type(title))
         todolist.remove_from_list(title)
     elif x == 3:
         print("Printing To Do List...")
