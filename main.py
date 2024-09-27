@@ -8,17 +8,25 @@ def menu_printer():
     output = "1: Add To List\n2: Remove From List\n3. Print List\n4: Save List\n5: Load Previous List\n6: Quit"
     print(output)
 
+def task_inputs():
+    isDone = False
+    task_list = []
+    while not isDone:
+        task = input("Task: ")
+        task_list.append(task)
+        done = int(input("Type 1 to be done inputting tasks: "))
+        if done is 1:
+            isDone = True
+    return task_list
+
 def inputChecker(input_num):
     x = input_num
     isDone = False
     if x == 1:
-        print("Add To List")
-        #The tasks are being parsed weird when printed out???
         title = input("Title: ")
-        tasks = input("Tasks: ")
+        tasks = task_inputs()
         todolist.add_to_list(title, tasks)
     elif x == 2:
-        print("Remove Task")
         title = input("Title to Remove: ")
         #This doesnt remove anything even if the Title name is right?
         todolist.remove_from_list(title)
@@ -26,10 +34,8 @@ def inputChecker(input_num):
         print("Printing To Do List...")
         print(todolist)
     elif x == 4:
-        print("Save List")
         todolist.write_to_file("SavedList.txt")
     elif x == 5:
-        print("Load Previous List")
         todolist.read_from_file("SavedList.txt")
     elif x == 6:
         print("Quitting...")
