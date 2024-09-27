@@ -13,7 +13,7 @@ def task_inputs():
     task_list = []
     while not isDone:
         task = input("Task: ")
-        if task is "":
+        if task == "":
             break
         else:
             task_list.append(task)
