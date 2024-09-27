@@ -12,8 +12,8 @@ class linkedList:
         temp = self.head
         out = ""
         while temp is not None:
-            if temp is self.head:
-                out = "Head --> \n"
+            # if temp is self.head:
+            #     out = "Head --> \n"
             out = out + "Title: " + temp.title + "\n"
             for task in temp.tasks:
                 out = out + "\t* " + task + "\n"
@@ -32,12 +32,12 @@ class linkedList:
     def remove_from_list(self,title):
         temp = self.head
         before = temp
-        if title is temp.title:
+        if title == temp.title:
             self.head = temp.next
         else:
             temp = temp.next
             while temp is not None:
-                if temp.title is title:
+                if temp.title == title:
                     before.next = temp.next
                     break
                 temp = temp.next
